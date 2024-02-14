@@ -1,0 +1,3 @@
+[submodule "raw-tiff-converter"]
+	path = raw-tiff-converter
+	url = https://github.com/rs2lab/survey3-raw-tiff-converter.git
