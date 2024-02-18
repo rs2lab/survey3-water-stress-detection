@@ -161,3 +161,4 @@ cython_debug/
 
 inFolder/
 outFolder/
+multispectral_vegiband_kmeans_model*.pkl
