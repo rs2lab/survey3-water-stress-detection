@@ -44,6 +44,10 @@ class MultispectralRGNImage(MultispectralImage):
         denom = (self.nir_band.astype(float) + self.green_band.astype(float))
         return MultispectralImage(nom / denom, metadata=self.metadata)
 
+    @classmethod
+    def from_multispectral_image(cls, mimage: MultispectralImage):
+        return MultispectralRGNImage(mimage.image, mimage.metadata)
+
 
 class MultispectralOCNImage(MultispectralImage):
     @property
@@ -58,6 +62,11 @@ class MultispectralOCNImage(MultispectralImage):
     def nir_band(self):
         return self.image[2]
 
+    @classmethod
+    def from_multispectral_image(cls, mimage: MultispectralImage):
+        return MultispectralOCNImage(mimage.image, mimage.metadata)
+
+
 
 def save_multispectral_image(multispec_image: MultispectralImage, filename: str):
     image = multispec_image.image.reshape((-1, IMAGE_HEIGHT, IMAGE_WIDTH))
@@ -67,3 +76,10 @@ def save_multispectral_image(multispec_image: MultispectralImage, filename: str)
 
     with rasterio.open(filename, 'w', **metadata) as file:
         file.write(image)
+
+
+def load_multispectral_image(path: str) -> MultispectralImage:
+    with rasterio.open(path, 'r') as src:
+        metadata = src.meta
+        image = src.read()
+    return MultispectralImage(image, metadata)
