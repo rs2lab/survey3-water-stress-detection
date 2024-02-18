@@ -68,10 +68,10 @@ class MultispectralOCNImage(MultispectralImage):
 
 
 
-def save_multispectral_image(multispec_image: MultispectralImage, filename: str):
-    image = multispec_image.image.reshape((-1, IMAGE_HEIGHT, IMAGE_WIDTH))
-    metadata = multispec_image.metadata.copy()
-    metadata['dtype'] = multispec_image.image.dtype.name
+def save_multispectral_image(mimage: MultispectralImage, filename: str):
+    image = mimage.image.reshape((-1, IMAGE_HEIGHT, IMAGE_WIDTH))
+    metadata = mimage.metadata.copy()
+    metadata['dtype'] = mimage.image.dtype.name
     metadata['count'] = image.shape[0]
 
     with rasterio.open(filename, 'w', **metadata) as file:
