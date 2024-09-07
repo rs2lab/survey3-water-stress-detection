@@ -13,14 +13,15 @@ As imagens deverão ser coletadas num campo agrícola que contenha preferencialm
 As imagens coletadas terão de ser convertidas para o formato tiff para depois serem processadas, e para tal terá dois caminhos:
 
 1. (**Recomendado**) Descarregar o software [Mapir Camera Control](https://www.mapir.camera/products/mapir-camera-control) distribuido pelo criador da câmara para fazer esse processo de conversão
-2. Utilizar o programa encontrado dentro do subrepositório em [raw-tiff-converter](raw-tiff-converter) para fazer os processo
+2. Utilizar o programa encontrado no repositório em [survey3-raw-tiff-converter](https://github.com/rs2lab/survey3-raw-tiff-converter) para fazer os processo
 
 Nesses casos o primeiro é o mais recomendado pois dá resultados bem melhores do que na segunda opção.
 
 Após coletar as imagens pode seguir com os procedimentos encontrados no notebook [water stress detection](water_stress_detection.ipynb)
 
+<!-- TODO
 ### Análise das Imagens
-TODO
+ -->
 ## Referências Bibliográficas
 
 - *[1] C. Z. Espinoza, L. R. Khot, S. Sankaran, e P. W. Jacoby, «High Resolution Multispectral and Thermal Remote Sensing-Based Water Stress Assessment in Subsurface Irrigated Grapevines», Remote Sensing, vol. 9, n.º 9. MDPI AG, p. 961, set. 16, 2017. doi: 10.3390/rs9090961.*
